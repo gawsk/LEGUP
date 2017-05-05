@@ -1760,11 +1760,13 @@ public class BoardState implements java.io.Serializable
 			rv.location = s.location;
 
 			// set modification properties such that any initial data is unmodifiable
-			for (int y = 0; y < rv.getHeight(); ++y) for (int x = 0; x < rv.getWidth(); ++x)
-			{
-				if (rv.getBoardCells()[y][x] != PuzzleModule.CELL_UNKNOWN)
+			if (s.puzzleMod != "shortTruthTable"){
+				for (int y = 0; y < rv.getHeight(); ++y) for (int x = 0; x < rv.getWidth(); ++x)
 				{
-					rv.modifiableCells[y][x] = false;
+					if (rv.getBoardCells()[y][x] != PuzzleModule.CELL_UNKNOWN)
+					{
+						rv.modifiableCells[y][x] = false;
+					}
 				}
 			}
 		}

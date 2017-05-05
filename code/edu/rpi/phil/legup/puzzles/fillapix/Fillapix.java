@@ -38,7 +38,7 @@ public class Fillapix extends PuzzleModule
     public Map<String, Integer> getSelectableCells()
     {
         Map<String, Integer> tmp = new LinkedHashMap<String, Integer>();
-        tmp.put("blank", CELL_UNKNOWN);
+        tmp.put("blank", UNKNOWN);
         tmp.put("filled", FILLED);
         tmp.put("empty", EMPTY);
         return tmp;
